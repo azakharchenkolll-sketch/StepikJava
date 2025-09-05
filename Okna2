@@ -1,0 +1,40 @@
+import javax.swing.*;
+
+public class Main {
+    public static void main(String[] args) {
+        // первый вопрос
+        int answer1 = JOptionPane.showConfirmDialog(
+                null,
+                "Вам нравится кофе?",
+                "Вопрос 1",
+                JOptionPane.YES_NO_OPTION);
+
+        // второй вопрос
+        int answer2 = JOptionPane.showConfirmDialog(
+                null,
+                "Вы любите программировать?",
+                "Вопрос 2",
+                JOptionPane.YES_NO_OPTION);
+
+        String message;
+
+        // обрабатываем все 4 случая
+        if (answer1 == JOptionPane.YES_OPTION && answer2 == JOptionPane.YES_OPTION) {
+            message = "Отлично! Кофе и программирование — идеальная пара ☕💻";
+        } else if (answer1 == JOptionPane.YES_OPTION && answer2 == JOptionPane.NO_OPTION) {
+            message = "Кофе есть, а кодить не любите — странное сочетание 😅";
+        } else if (answer1 == JOptionPane.NO_OPTION && answer2 == JOptionPane.YES_OPTION) {
+            message = "Значит, программируете без кофе? Уважуха 👏";
+        } else {
+            message = "Не любите ни кофе, ни код… что ж, у каждого свой путь 🙂";
+        }
+
+        // итоговое окно
+        JOptionPane.showMessageDialog(
+                null,
+                message,
+                "Результат",
+                JOptionPane.INFORMATION_MESSAGE
+        );
+    }
+}
